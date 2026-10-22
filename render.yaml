@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: dailysalesmonitor
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn --pythonpath backend dailysales.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: DEBUG
+        value: "False"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: RESTRICTED_ACCESS
+        value: "False"

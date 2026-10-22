@@ -102,7 +102,6 @@ python manage.py runserver 8000
 ```
 Open `http://localhost:8000/` in your browser. Django serves both the compiled frontend and the API endpoints directly.
 
----
 
 ## Authentication & Reviewer Access
 
