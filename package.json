@@ -5,12 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && python manage.py collectstatic --no-input",
+    "build:frontend": "vite build",
+    "collectstatic": "python manage.py collectstatic --no-input",
+    "setup:db": "python manage.py setup_db",
+    "server": "python manage.py runserver",
+    "migrate": "python manage.py migrate",
+    "test:backend": "python manage.py test sales",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "server": "python backend/manage.py runserver",
-    "migrate": "python backend/manage.py migrate",
-    "test:backend": "python backend/manage.py test sales"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.2.8",

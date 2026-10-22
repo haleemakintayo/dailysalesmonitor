@@ -4,7 +4,8 @@ import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? '/static/' : '/',
   plugins: [
     tailwindcss(),
     react(),
@@ -19,4 +20,4 @@ export default defineConfig({
       }
     }
   }
-})
+}))

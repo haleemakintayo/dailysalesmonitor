@@ -1,0 +1,5 @@
+[tool.vercel]
+entrypoint = "backend.dailysales.wsgi:application"
+
+[tool.vercel.scripts]
+build = "npm run build"

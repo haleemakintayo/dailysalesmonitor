@@ -3,9 +3,16 @@
 import os
 import sys
 from pathlib import Path
+from dotenv import load_dotenv
 
 def main():
     root_dir = Path(__file__).resolve().parent
+
+    # Explicitly load local .env from project root if present
+    env_file = root_dir / '.env'
+    if env_file.exists():
+        load_dotenv(env_file)
+
     backend_dir = root_dir / 'backend'
     sys.path.insert(0, str(backend_dir))
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dailysales.settings')
